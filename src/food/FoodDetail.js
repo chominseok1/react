@@ -1,5 +1,5 @@
 import {Fragment} from "react";
-import {NavLink} from "react-router-dom";
+import {NavLink,useNavigate} from "react-router-dom";
 import {useEffect,useState} from "react";
 import {useParams} from "react-router";
 import axios from "axios";
@@ -7,6 +7,7 @@ import axios from "axios";
 function FoodDetail(){
  // 전송된 데이터 받기
  const {fno}=useParams();
+ const nav=useNavigate();
  const [foodDetail,setFoodDetail]=useState({})
  useEffect(() => {
    axios.get('http://localhost/food/food_detail_react',{
@@ -66,7 +67,7 @@ function FoodDetail(){
               </tr>
              <tr>
                  <td className={"text-right"} colSpan={"2"}>
-                     <a href={"javascript:history.back()"} className={"btn btn-sm btn-primary"}>목록</a>
+                     <button onClick={()=>nav(-1)} className={"btn btn-sm btn-primary"}>목록</button>
                  </td>
              </tr>
              </tbody>
