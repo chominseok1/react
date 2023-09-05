@@ -13,8 +13,7 @@ function Header(){
                         <a className="dropdown-toggle" data-toggle="dropdown" href="#">맛집
                             <span className="caret"></span></a>
                         <ul className="dropdown-menu">
-                            <li><a href="#">지역별 맛집 찾기</a></li>
-                            
+                            <li><NavLink to={"/food/find"}>지역별 맛집 찾기</NavLink></li>
                         </ul>
                     </li>
                     <li className="dropdown">
@@ -27,7 +26,7 @@ function Header(){
                         </ul>
                     </li>
                     <li><a href="#">자유게시판</a></li>
-                    <li><a href="#">뉴스검색</a></li>
+                    <li><a href="/news/news_find">뉴스검색</a></li>
                 </ul>
             </div>
         </nav>
